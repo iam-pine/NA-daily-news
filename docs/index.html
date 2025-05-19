@@ -22,12 +22,12 @@ body {
 }
 
 .header {
-  padding: 32px 30px;
+  padding: 28px 30px;
   background-color: #3b82f6;
   background: linear-gradient(135deg, #3b82f6, #6366f1);
   border-radius: 16px;
   margin-bottom: 30px;
-  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.25);
   display: flex;
   align-items: center;
   position: relative;
@@ -42,16 +42,8 @@ body {
 }
 
 .header-icon {
-  font-size: 32px;
-  margin-right: 20px;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
-  100% { transform: translateY(0px); }
+  font-size: 30px;
+  margin-right: 18px;
 }
 
 .header-text {
@@ -59,12 +51,11 @@ body {
 }
 
 .header-title {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 22px;
+  font-weight: 600;
   letter-spacing: -0.5px;
   color: #ffffff;
   margin: 0 0 4px 0;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .header-subtitle {
@@ -98,30 +89,30 @@ body {
 
 .item-content {
   padding: 20px;
+}
+
+.item-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  margin-bottom: 10px;
 }
 
 .date-container {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-.date-primary {
-  font-size: 24px;
-  font-weight: 700;
-  color: #f9fafb;
-}
-
-.date-details {
-  margin-left: 16px;
-}
-
-.date-weekday {
-  font-size: 14px;
-  color: #9ca3af;
-  margin-bottom: 4px;
+.weekday-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  margin-right: 8px;
 }
 
 .date-full {
@@ -162,6 +153,18 @@ body {
 
 .archive-item:hover .view-button {
   transform: translateX(4px);
+}
+
+.item-subtitle {
+  font-size: 15px;
+  color: #d1d5db;
+  margin: 10px 0 0;
+  padding-left: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .load-more-container {
@@ -219,7 +222,7 @@ body {
 }
 
 @media (max-width: 480px) {
-  .item-content {
+  .item-header {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -230,7 +233,7 @@ body {
   }
 
   .header-icon {
-    font-size: 28px;
+    font-size: 26px;
     margin-right: 14px;
   }
 
@@ -256,63 +259,10 @@ body {
   <!-- 아카이브 리스트 -->
   <div class="archive-list">
     <!-- LATEST_ITEM_MARKER -->
-    <a href="#" class="archive-item">
-      <div class="item-content">
-        <div class="date-container">
-          <div class="date-primary">19</div>
-          <div class="date-details">
-            <div class="date-weekday">MON</div>
-            <div class="date-full">2025년 5월 19일</div>
-          </div>
-          <div class="new-badge">NEW</div>
-        </div>
-        <div class="view-button">
-          보기
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="<http://www.w3.org/2000/svg>">
-            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
-    </a>
+    <!-- 여기에 새 항목이 추가됩니다 -->
 
     <!-- EXISTING_ITEMS_MARKER -->
-    <a href="#" class="archive-item">
-      <div class="item-content">
-        <div class="date-container">
-          <div class="date-primary">18</div>
-          <div class="date-details">
-            <div class="date-weekday">SUN</div>
-            <div class="date-full">2025년 5월 18일</div>
-          </div>
-        </div>
-        <div class="view-button">
-          보기
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="<http://www.w3.org/2000/svg>">
-            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
-    </a>
-
-    <a href="#" class="archive-item">
-      <div class="item-content">
-        <div class="date-container">
-          <div class="date-primary">17</div>
-          <div class="date-details">
-            <div class="date-weekday">SAT</div>
-            <div class="date-full">2025년 5월 17일</div>
-          </div>
-        </div>
-        <div class="view-button">
-          보기
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="<http://www.w3.org/2000/svg>">
-            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
-    </a>
-
-    <!-- 더 많은 항목... -->
+    <!-- 여기에 기존 항목들이 추가됩니다 -->
   </div>
 
   <!-- 더보기 버튼 -->
@@ -329,5 +279,13 @@ body {
     <p>문의: <a href="mailto:ER-OverseasBiz@nexon.co.kr">ER-OverseasBiz@nexon.co.kr</a></p>
   </div>
 </div>
+
+<!-- 마지막 업데이트 정보 -->
+<div style="display:none;" id="last-update-info">
+  <!-- LAST_UPDATE_MARKER -->
+  <div id="last-updated-date"></div>
+  <div id="last-item-id"></div>
+</div>
+
 </body>
 </html>
