@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>북미 Daily Gaming News - 아카이브</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>북미 Daily Gaming News - 아카이브</title>
+
+  <!-- 기본 메타 정보 -->
+  <meta name="description" content="북미 게임 산업의 최신 뉴스와 동향을 매일 업데이트하는 아카이브입니다.">
+  <meta name="keywords" content="게임 뉴스, 북미 게임 산업, 게임 트렌드, 일일 게임 뉴스">
+  <meta name="author" content="NEXON KOREA">
+  <meta name="robots" content="index, follow">
+
+  <!-- 이모지 파비콘 (SVG 방식) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='<http://www.w3.org/2000/svg>' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+
 <style>
 body {
   margin: 0;
@@ -56,12 +66,14 @@ body {
   letter-spacing: -0.5px;
   color: #ffffff;
   margin: 0 0 4px 0;
+  letter-spacing: -0.5px;
 }
 
 .header-subtitle {
   font-size: 14px;
   color: rgba(255,255,255,0.85);
   margin: 0;
+  letter-spacing: -0.5px;
 }
 
 .archive-list {
@@ -76,7 +88,7 @@ body {
   padding: 0;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.3s, background-color 0.3s;
   display: block;
   text-decoration: none;
   color: inherit;
@@ -84,7 +96,12 @@ body {
 
 .archive-item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  background-color: #263548;
+}
+
+.archive-item.hidden {
+  display: none;
 }
 
 .item-content {
@@ -106,13 +123,15 @@ body {
 
 .weekday-tag {
   display: inline-block;
-  padding: 2px 8px;
-  background-color: rgba(59, 130, 246, 0.2);
+  padding: 3px 10px;
+  background-color: rgba(59, 130, 246, 0.15);
   color: #60a5fa;
   border-radius: 4px;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 600;
   margin-right: 8px;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .date-full {
@@ -130,12 +149,14 @@ body {
   border-radius: 20px;
   margin-left: 8px;
   animation: pulse 1.5s infinite;
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+  letter-spacing: 0.3px;
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
-  70% { box-shadow: 0 0 0 4px rgba(239, 68, 68, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); opacity: 1; }
+  70% { box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); opacity: 0.8; }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); opacity: 1; }
 }
 
 .view-button {
@@ -144,27 +165,38 @@ body {
   color: #3b82f6;
   font-size: 14px;
   font-weight: 500;
-  transition: transform 0.2s;
+  transition: all 0.2s;
+  padding: 5px 10px;
+  border-radius: 6px;
 }
 
 .view-button svg {
   margin-left: 6px;
+  transition: transform 0.2s;
 }
 
 .archive-item:hover .view-button {
+  background-color: rgba(59, 130, 246, 0.1);
+  transform: translateX(2px);
+}
+
+.archive-item:hover .view-button svg {
   transform: translateX(4px);
 }
 
 .item-subtitle {
   font-size: 13px;
-  color: #A6AEBA;
-  margin: 10px 0 0;
+  color: #A1A9B5;
+  margin: 12px 0 0;
   padding-left: 0;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: -0.5px;
 }
 
 .load-more-container {
@@ -177,7 +209,7 @@ body {
   color: white;
   border: 1px solid #4b5563;
   border-radius: 10px;
-  padding: 12px 22px;
+  padding: 12px 24px;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.3px;
@@ -186,25 +218,29 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .load-more-button:hover {
   background-color: #374151;
-  transform: translateY(-1px);
-}
-
-.load-more-button:active {
-  transform: translateY(0);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 .load-more-button .icon {
-  margin-left: 8px;
+  margin-left: 10px;
   font-size: 16px;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease;
 }
 
 .load-more-button:hover .icon {
-  transform: translateY(2px);
+  transform: translateY(3px);
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
 }
 
 .footer {
@@ -239,6 +275,8 @@ body {
 
   .header-title {
     font-size: 20px;
+  letter-spacing: -0.5px;
+
   }
 }
 </style>
@@ -258,10 +296,9 @@ body {
 
   <!-- 아카이브 리스트 -->
   <div class="archive-list" id="newsArchive">
-<div class="archive-list" id="newsArchive">
     <!-- ITEMS_BEGIN -->
-  <!-- ITEMS_END -->
-    <a href="#" class="archive-item">
+    <!-- ITEMS_END -->
+    <a href="https://iam-pine.github.io/NA-daily-news/NA_dailynews_250517" class="archive-item">
       <div class="item-content">
         <div class="item-header">
           <div class="date-container">
@@ -279,7 +316,7 @@ body {
       </div>
     </a>
 
-    <a href="#" class="archive-item">
+    <a href="https://iam-pine.github.io/NA-daily-news/NA_dailynews_250516" class="archive-item">
       <div class="item-content">
         <div class="item-header">
           <div class="date-container">
@@ -297,7 +334,7 @@ body {
       </div>
     </a>
 
-    <a href="#" class="archive-item">
+    <a href="https://iam-pine.github.io/NA-daily-news/NA_dailynews_250515" class="archive-item">
       <div class="item-content">
         <div class="item-header">
           <div class="date-container">
@@ -315,7 +352,7 @@ body {
       </div>
     </a>
 
-    <a href="#" class="archive-item">
+    <a href="https://iam-pine.github.io/NA-daily-news/NA_dailynews_250514" class="archive-item">
       <div class="item-content">
         <div class="item-header">
           <div class="date-container">
@@ -333,12 +370,82 @@ body {
       </div>
     </a>
 
-    <!-- 더 많은 항목... -->
+    <a href="#" class="archive-item">
+      <div class="item-content">
+        <div class="item-header">
+          <div class="date-container">
+            <div class="weekday-tag">TUE</div>
+            <div class="date-full">2025년 5월 13일</div>
+          </div>
+          <div class="view-button">
+            보기
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="<http://www.w3.org/2000/svg>">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <p class="item-subtitle">Elden Ring: Shadow of the Erdtree DLC, 유출된 스크린샷으로 새로운 보스들 공개</p>
+      </div>
+    </a>
+
+    <a href="#" class="archive-item">
+      <div class="item-content">
+        <div class="item-header">
+          <div class="date-container">
+            <div class="weekday-tag">MON</div>
+            <div class="date-full">2025년 5월 12일</div>
+          </div>
+          <div class="view-button">
+            보기
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="<http://www.w3.org/2000/svg>">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <p class="item-subtitle">Epic Games Store, 전체 매출의 40%가 포트나이트 외 게임에서 발생</p>
+      </div>
+    </a>
+
+    <a href="#" class="archive-item">
+      <div class="item-content">
+        <div class="item-header">
+          <div class="date-container">
+            <div class="weekday-tag">SUN</div>
+            <div class="date-full">2025년 5월 11일</div>
+          </div>
+          <div class="view-button">
+            보기
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="<http://www.w3.org/2000/svg>">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <p class="item-subtitle">Rockstar Games, GTA 6 출시일 2026년 가을로 확정</p>
+      </div>
+    </a>
+
+    <a href="#" class="archive-item">
+      <div class="item-content">
+        <div class="item-header">
+          <div class="date-container">
+            <div class="weekday-tag">SAT</div>
+            <div class="date-full">2025년 5월 10일</div>
+          </div>
+          <div class="view-button">
+            보기
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="<http://www.w3.org/2000/svg>">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <p class="item-subtitle">Dragon Age: The Veilguard, 계획보다 빠른 11월 출시 예정</p>
+      </div>
+    </a>
   </div>
 
   <!-- 더보기 버튼 -->
   <div class="load-more-container">
-    <button class="load-more-button">
+    <button class="load-more-button" id="loadMoreButton">
       더 많은 뉴스레터 불러오기
       <span class="icon">↓</span>
     </button>
@@ -357,28 +464,127 @@ body {
   <!-- 마지막 업데이트 정보가 여기에 저장됩니다 -->
 </div>
 
-<!-- NEW 배지 자동화를 위한 JavaScript -->
+<!-- JavaScript -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // 모든 NEW 배지 제거 (기존에 있을 경우)
+  // NEW 배지 관리
   const existingBadges = document.querySelectorAll('.new-badge');
   existingBadges.forEach(badge => badge.remove());
 
-  // 첫 번째 아이템에 NEW 배지 추가
   const archiveList = document.getElementById('newsArchive');
-  const firstItem = archiveList.querySelector('.archive-item');
+  const allItems = archiveList.querySelectorAll('.archive-item');
 
-  if (firstItem) {
+  // 첫 번째 항목에 NEW 배지 추가
+  if (allItems.length > 0) {
+    const firstItem = allItems[0];
     const dateContainer = firstItem.querySelector('.date-container');
     if (dateContainer) {
       const newBadge = document.createElement('div');
       newBadge.className = 'new-badge';
-      newBadge.textContent = 'N';
+      newBadge.textContent = 'NEW';
       dateContainer.appendChild(newBadge);
     }
   }
+
+  // 자동 페이징 기능 구현
+  const itemsPerPage = 5; // 한 페이지에 표시할 항목 수
+  let currentPage = 1;
+
+  // 초기 페이지 설정
+  function initializePagination() {
+    // 총 페이지 수 계산
+    const totalPages = Math.ceil(allItems.length / itemsPerPage);
+
+    // 모든 항목 초기에 숨김
+    allItems.forEach((item, index) => {
+      if (index >= itemsPerPage) {
+        item.classList.add('hidden');
+      }
+    });
+
+    // 마지막 페이지인 경우 '더보기' 버튼 숨김
+    if (totalPages <= 1) {
+      document.getElementById('loadMoreButton').style.display = 'none';
+    }
+
+    return totalPages;
+  }
+
+  const totalPages = initializePagination();
+
+  // 더보기 버튼 클릭 이벤트
+  const loadMoreButton = document.getElementById('loadMoreButton');
+  loadMoreButton.addEventListener('click', function() {
+    if (currentPage < totalPages) {
+      currentPage++;
+
+      // 다음 페이지의 항목들 표시
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const endIndex = Math.min(startIndex + itemsPerPage, allItems.length);
+
+      let firstNewlyVisibleItem = null;
+
+      for (let i = startIndex; i < endIndex; i++) {
+        allItems[i].classList.remove('hidden');
+        if (!firstNewlyVisibleItem) {
+          firstNewlyVisibleItem = allItems[i];
+        }
+      }
+
+      // 부드러운 스크롤 효과
+      if (firstNewlyVisibleItem) {
+        setTimeout(() => {
+          firstNewlyVisibleItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+      }
+
+      // 마지막 페이지인 경우 '더보기' 버튼 숨김
+      if (currentPage >= totalPages) {
+        loadMoreButton.style.display = 'none';
+      }
+    }
+  });
+
+  // 새 항목이 추가될 때 자동으로 페이지 재계산하는 기능
+  // Make 자동화 시스템을 위한 도우미 함수
+  window.recalculatePagination = function() {
+    const updatedItems = archiveList.querySelectorAll('.archive-item');
+
+    // 첫 번째 페이지만 표시하고 나머지는 숨김
+    updatedItems.forEach((item, index) => {
+      if (index < itemsPerPage) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+
+    // 총 페이지 수 재계산
+    const newTotalPages = Math.ceil(updatedItems.length / itemsPerPage);
+
+    // 더보기 버튼 표시 여부 결정
+    if (newTotalPages <= 1) {
+      loadMoreButton.style.display = 'none';
+    } else {
+      loadMoreButton.style.display = 'inline-flex';
+    }
+
+    // 현재 페이지 초기화
+    currentPage = 1;
+
+    return newTotalPages;
+  };
+
+  // 스크롤 이벤트 - 스크롤 위치에 따라 헤더 그림자 효과 변경 (선택적)
+  window.addEventListener('scroll', function() {
+    const header = document.querySelector('.header');
+    if (window.scrollY > 20) {
+      header.style.boxShadow = '0 6px 20px rgba(59, 130, 246, 0.3)';
+    } else {
+      header.style.boxShadow = '0 4px 15px rgba(59, 130, 246, 0.25)';
+    }
+  });
 });
 </script>
-
 </body>
 </html>
