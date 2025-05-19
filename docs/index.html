@@ -156,8 +156,8 @@ body {
 }
 
 .item-subtitle {
-  font-size: 15px;
-  color: #d1d5db;
+  font-size: 13px;
+  color: #A6AEBA;
   margin: 10px 0 0;
   padding-left: 0;
   display: -webkit-box;
@@ -257,12 +257,84 @@ body {
   </div>
 
   <!-- 아카이브 리스트 -->
-  <div class="archive-list">
-    <!-- LATEST_ITEM_MARKER -->
-    <!-- 여기에 새 항목이 추가됩니다 -->
+  <div class="archive-list" id="newsArchive">
+<div class="archive-list" id="newsArchive">
+    <!-- ITEMS_BEGIN -->
+    <!-- 여기에 항목들이 추가됩니다 -->
+    <!-- ITEMS_END -->
+    <a href="#" class="archive-item">
+      <div class="item-content">
+        <div class="item-header">
+          <div class="date-container">
+            <div class="weekday-tag">SAT</div>
+            <div class="date-full">2025년 5월 17일</div>
+          </div>
+          <div class="view-button">
+            보기
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="<http://www.w3.org/2000/svg>">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <p class="item-subtitle">Sony의 라이브 서비스 문제 지속, Jade Raymond가 Fairgames 개발사에서 퇴사</p>
+      </div>
+    </a>
 
-    <!-- EXISTING_ITEMS_MARKER -->
-    <!-- 여기에 기존 항목들이 추가됩니다 -->
+    <a href="#" class="archive-item">
+      <div class="item-content">
+        <div class="item-header">
+          <div class="date-container">
+            <div class="weekday-tag">FRI</div>
+            <div class="date-full">2025년 5월 16일</div>
+          </div>
+          <div class="view-button">
+            보기
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="<http://www.w3.org/2000/svg>">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <p class="item-subtitle">Nintendo of America 사장, 미국 내 Switch 2 수요 충족을 자신</p>
+      </div>
+    </a>
+
+    <a href="#" class="archive-item">
+      <div class="item-content">
+        <div class="item-header">
+          <div class="date-container">
+            <div class="weekday-tag">THU</div>
+            <div class="date-full">2025년 5월 15일</div>
+          </div>
+          <div class="view-button">
+            보기
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="<http://www.w3.org/2000/svg>">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <p class="item-subtitle">Sony, 관세 문제 해결을 위해 PS5 미국 생산 고려</p>
+      </div>
+    </a>
+
+    <a href="#" class="archive-item">
+      <div class="item-content">
+        <div class="item-header">
+          <div class="date-container">
+            <div class="weekday-tag">WED</div>
+            <div class="date-full">2025년 5월 14일</div>
+          </div>
+          <div class="view-button">
+            보기
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="<http://www.w3.org/2000/svg>">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <p class="item-subtitle">Microsoft, 전체 직원의 3% 감원 발표</p>
+      </div>
+    </a>
+
+    <!-- 더 많은 항목... -->
   </div>
 
   <!-- 더보기 버튼 -->
@@ -283,9 +355,31 @@ body {
 <!-- 마지막 업데이트 정보 -->
 <div style="display:none;" id="last-update-info">
   <!-- LAST_UPDATE_MARKER -->
-  <div id="last-updated-date"></div>
-  <div id="last-item-id"></div>
+  <!-- 마지막 업데이트 정보가 여기에 저장됩니다 -->
 </div>
+
+<!-- NEW 배지 자동화를 위한 JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 모든 NEW 배지 제거 (기존에 있을 경우)
+  const existingBadges = document.querySelectorAll('.new-badge');
+  existingBadges.forEach(badge => badge.remove());
+
+  // 첫 번째 아이템에 NEW 배지 추가
+  const archiveList = document.getElementById('newsArchive');
+  const firstItem = archiveList.querySelector('.archive-item');
+
+  if (firstItem) {
+    const dateContainer = firstItem.querySelector('.date-container');
+    if (dateContainer) {
+      const newBadge = document.createElement('div');
+      newBadge.className = 'new-badge';
+      newBadge.textContent = 'N';
+      dateContainer.appendChild(newBadge);
+    }
+  }
+});
+</script>
 
 </body>
 </html>
