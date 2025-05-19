@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>북미 Daily Gaming News - 아카이브</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>북미 Daily Gaming News - 아카이브</title>
 
-  <!-- 기본 메타 정보 -->
-  <meta name="description" content="북미 게임 산업의 최신 뉴스와 동향을 매일 업데이트하는 아카이브입니다.">
-  <meta name="keywords" content="게임 뉴스, 북미 게임 산업, 게임 트렌드, 일일 게임 뉴스">
-  <meta name="author" content="NEXON KOREA">
-  <meta name="robots" content="index, follow">
+<!-- 기본 메타 정보 -->
+<meta name="description" content="북미 게임 산업의 최신 뉴스와 동향을 매일 업데이트하는 아카이브입니다.">
+<meta name="keywords" content="게임 뉴스, 북미 게임 산업, 게임 트렌드, 일일 게임 뉴스">
+<meta name="author" content="NEXON KOREA">
+<meta name="robots" content="index, follow">
 
-  <!-- 이모지 파비콘 (SVG 방식) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='<http://www.w3.org/2000/svg>' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+<!-- 이모지 파비콘 (SVG 방식) -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='<http://www.w3.org/2000/svg>' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
 
 <style>
 body {
@@ -31,29 +31,74 @@ body {
   padding: 0 20px;
 }
 
+/* 헤더 스타일 수정 - 박스 제거 및 아이콘 강조 */
 .header {
-  padding: 28px 30px;
-  background-color: #3b82f6;
-  background: linear-gradient(135deg, #3b82f6, #6366f1);
-  border-radius: 16px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.25);
+  margin-bottom: 35px;
+  padding: 20px 0;
   display: flex;
   align-items: center;
-  position: relative;
 }
 
-.header-content {
-  position: relative;
-  z-index: 1;
+@keyframes float-icon {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.header-icon-container {
+  width: 70px;
+  height: 70px;
+  margin-right: 25px;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  width: 100%;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.3);
+  position: relative;
+  flex-shrink: 0;
 }
 
 .header-icon {
-  font-size: 30px;
-  margin-right: 18px;
+  font-size: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px; /* 명시적인 높이 설정 */
+  width: 36px; /* 명시적인 너비 설정 */
+  text-align: center;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  position: relative;
+  top: -2px; /* 미세 조정 */
+  animation: float-icon 3s ease-in-out infinite;
+}
+
+/* 아이콘 주변 빛나는 효과 */
+.header-icon-container::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.3;
+  animation: pulse-soft 2s infinite;
+}
+
+@keyframes pulse-soft {
+  0% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.05); opacity: 0.15; }
+  100% { transform: scale(1); opacity: 0.3; }
 }
 
 .header-text {
@@ -61,17 +106,16 @@ body {
 }
 
 .header-title {
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: -0.5px;
-  color: #ffffff;
-  margin: 0 0 4px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 6px 0;
   letter-spacing: -0.5px;
 }
 
 .header-subtitle {
-  font-size: 14px;
-  color: rgba(255,255,255,0.85);
+  font-size: 15px;
+  color: #a1a9b5;
   margin: 0;
   letter-spacing: -0.5px;
 }
@@ -268,29 +312,39 @@ body {
     align-self: flex-end;
   }
 
+  /* 모바일 헤더 조정 */
+  .header-icon-container {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+  }
+
   .header-icon {
-    font-size: 26px;
-    margin-right: 14px;
+    font-size: 28px;
+    height: 30px;
+    width: 30px;
   }
 
   .header-title {
-    font-size: 20px;
-  letter-spacing: -0.5px;
+    font-size: 22px;
+  }
 
+  .header-subtitle {
+    font-size: 14px;
   }
 }
 </style>
 </head>
 <body>
 <div class="container">
-  <!-- 헤더 -->
+  <!-- 헤더 - 간결하게 수정하고 아이콘 강조 -->
   <div class="header">
-    <div class="header-content">
-      <span class="header-icon">🎮</span>
-      <div class="header-text">
-        <h1 class="header-title">북미 Daily Gaming News</h1>
-        <p class="header-subtitle">북미 게임 산업 최신 동향 아카이브</p>
-      </div>
+    <div class="header-icon-container">
+      <div class="header-icon">🎮</div>
+    </div>
+    <div class="header-text">
+      <h1 class="header-title">북미 Daily Gaming News</h1>
+      <p class="header-subtitle">북미 게임 산업 최신 동향 아카이브</p>
     </div>
   </div>
 
@@ -298,7 +352,7 @@ body {
   <div class="archive-list" id="newsArchive">
     <!-- ITEMS_BEGIN -->
     <!-- ITEMS_END -->
-    <a href="https://iam-pine.github.io/NA-daily-news/NA_dailynews_250517" class="archive-item">
+    <a href="<https://iam-pine.github.io/NA-daily-news/NA_dailynews_250517>" class="archive-item">
       <div class="item-content">
         <div class="item-header">
           <div class="date-container">
@@ -316,7 +370,7 @@ body {
       </div>
     </a>
 
-    <a href="https://iam-pine.github.io/NA-daily-news/NA_dailynews_250516" class="archive-item">
+    <a href="<https://iam-pine.github.io/NA-daily-news/NA_dailynews_250516>" class="archive-item">
       <div class="item-content">
         <div class="item-header">
           <div class="date-container">
@@ -334,7 +388,7 @@ body {
       </div>
     </a>
 
-    <a href="https://iam-pine.github.io/NA-daily-news/NA_dailynews_250515" class="archive-item">
+    <a href="<https://iam-pine.github.io/NA-daily-news/NA_dailynews_250515>" class="archive-item">
       <div class="item-content">
         <div class="item-header">
           <div class="date-container">
@@ -352,7 +406,7 @@ body {
       </div>
     </a>
 
-    <a href="https://iam-pine.github.io/NA-daily-news/NA_dailynews_250514" class="archive-item">
+    <a href="<https://iam-pine.github.io/NA-daily-news/NA_dailynews_250514>" class="archive-item">
       <div class="item-content">
         <div class="item-header">
           <div class="date-container">
@@ -367,78 +421,6 @@ body {
           </div>
         </div>
         <p class="item-subtitle">Microsoft, 전체 직원의 3% 감원 발표</p>
-      </div>
-    </a>
-
-    <a href="#" class="archive-item">
-      <div class="item-content">
-        <div class="item-header">
-          <div class="date-container">
-            <div class="weekday-tag">TUE</div>
-            <div class="date-full">2025년 5월 13일</div>
-          </div>
-          <div class="view-button">
-            보기
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="<http://www.w3.org/2000/svg>">
-              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
-        <p class="item-subtitle">Elden Ring: Shadow of the Erdtree DLC, 유출된 스크린샷으로 새로운 보스들 공개</p>
-      </div>
-    </a>
-
-    <a href="#" class="archive-item">
-      <div class="item-content">
-        <div class="item-header">
-          <div class="date-container">
-            <div class="weekday-tag">MON</div>
-            <div class="date-full">2025년 5월 12일</div>
-          </div>
-          <div class="view-button">
-            보기
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="<http://www.w3.org/2000/svg>">
-              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
-        <p class="item-subtitle">Epic Games Store, 전체 매출의 40%가 포트나이트 외 게임에서 발생</p>
-      </div>
-    </a>
-
-    <a href="#" class="archive-item">
-      <div class="item-content">
-        <div class="item-header">
-          <div class="date-container">
-            <div class="weekday-tag">SUN</div>
-            <div class="date-full">2025년 5월 11일</div>
-          </div>
-          <div class="view-button">
-            보기
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="<http://www.w3.org/2000/svg>">
-              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
-        <p class="item-subtitle">Rockstar Games, GTA 6 출시일 2026년 가을로 확정</p>
-      </div>
-    </a>
-
-    <a href="#" class="archive-item">
-      <div class="item-content">
-        <div class="item-header">
-          <div class="date-container">
-            <div class="weekday-tag">SAT</div>
-            <div class="date-full">2025년 5월 10일</div>
-          </div>
-          <div class="view-button">
-            보기
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="<http://www.w3.org/2000/svg>">
-              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
-        <p class="item-subtitle">Dragon Age: The Veilguard, 계획보다 빠른 11월 출시 예정</p>
       </div>
     </a>
   </div>
@@ -546,7 +528,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // 새 항목이 추가될 때 자동으로 페이지 재계산하는 기능
-  // Make 자동화 시스템을 위한 도우미 함수
   window.recalculatePagination = function() {
     const updatedItems = archiveList.querySelectorAll('.archive-item');
 
@@ -574,16 +555,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     return newTotalPages;
   };
-
-  // 스크롤 이벤트 - 스크롤 위치에 따라 헤더 그림자 효과 변경 (선택적)
-  window.addEventListener('scroll', function() {
-    const header = document.querySelector('.header');
-    if (window.scrollY > 20) {
-      header.style.boxShadow = '0 6px 20px rgba(59, 130, 246, 0.3)';
-    } else {
-      header.style.boxShadow = '0 4px 15px rgba(59, 130, 246, 0.25)';
-    }
-  });
 });
 </script>
 </body>
