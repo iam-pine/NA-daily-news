@@ -199,15 +199,30 @@ a {
     width: 100% !important;
   }
 
-  /* 이미지-텍스트 레이아웃 유지 */
-  .news-image {
-    width: 30% !important;
-    min-width: 120px !important; /* 최소 너비 보장 */
-  }
+    /* 여기에 추가: 이미지-텍스트 세로 배치 시작 */
+    .news-grid-row td {
+        display: block !important;
+        width: 100% !important;
+    }
 
-  .news-text-cell {
-    width: 65% !important;
-  }
+    .news-image {
+        width: 100% !important;
+        padding-bottom: 15px !important;
+    }
+
+    .news-image img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: none !important;
+    }
+
+    .spacer-cell {
+        display: none !important;
+    }
+
+    .news-text-cell {
+        width: 100% !important;
+    }
 
   /* 간격 확보 */
   .spacer-cell {
