@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎮 ER Biz - N/A Daily Game Brief</title>
+<style>
+/* 기본 스타일 */
+body {
+  margin: 0;
+  padding: 0;
+  background: #111827;
+  font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+  font-size: 14px;
+  color: #f9fafb;
+  line-height: 1.5;
+}
+
+/* 테이블 기본 스타일 재설정 */
+table {
+  border-collapse: collapse;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* 반응형 이미지 */
+img {
+  -ms-interpolation-mode: bicubic;
+  max-width: 100%;
+  border: 0;
+  height: auto;
+  outline: none;
+  text-decoration: none;
+}
+
+/* 링크 스타일 */
+a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+/* 공통 요소 */
+.section-title {
+  font-size: 18px;
+  color: #FDFEFE;
+  margin: 0 0 20px;
+  border-left: 4px solid #3b82f6;
+  padding-left: 12px;
+  font-weight: bold;
+}
+
+.card {
+  background-color: #1e293b;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #374151;
+  overflow: hidden;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #1f2937;
+  color: #3b82f6;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 13px;
+  text-decoration: none;
+  border: 1px solid #3b82f6;
+}
+
+/* 뉴스 아이템 클래스 - 최적화 */
+.news-item {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.headline-icon {
+  color: #ef4444;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: -0.5pt;
+  vertical-align: middle;
+}
+
+.headline-content {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.3;
+  letter-spacing: -0.5pt;
+}
+
+.headline-text {
+  color: #d1d5db;
+}
+
+.headline-meta {
+  font-size: 12px;
+  font-weight: normal;
+  color: #9ca3af;
+  margin-left: 8px;
+  letter-spacing: -0.5pt;
+}
+
+.source-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  margin-right: 6px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 16px;
+  margin: 0 4px 8px 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+}
+
+.tag-blue { background-color: #3b82f6; }
+.tag-green { background-color: #10b981; }
+.tag-purple { background-color: #695FEB; }
+
+.category-label {
+  padding: 6px 12px;
+  color: white;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 15px;
+  letter-spacing: -0.5pt;
+}
+
+/* 푸터 링크 */
+.footer-link {
+  display: block;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  background-color: #1e293b;
+  border-left: 4px solid #3b82f6;
+  color: #f9fafb;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 0 4px 4px 0;
+  letter-spacing: -0.5px;
+}
+
+/* 알림 텍스트 */
+.notice-text {
+  margin: 0 0 8px;
+  font-size: 10px;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* 원본 보기 버튼 - 강화된 버튼 디자인 */
+.original-btn {
+  display: inline-block;
+  padding: 3px 8px;
+  margin-left: 10px;
+  background-color: #1f2937;
+  border: 1px solid #3b82f6;
+  border-radius: 4px;
+  color: #60a5fa;
+  font-size: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  font-style: normal;
+  vertical-align: middle;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* 섹션 간격 */
+.section-gap {
+  height: 30px;
+}
+
+/* 반응형 미디어 쿼리 */
+@media only screen and (max-width: 650px) {
+  .main-container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .main-content {
+    width: 100% !important;
+  }
+
+    /* 여기에 추가: 이미지-텍스트 세로 배치 시작 */
+    .news-grid-row td {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .news-image {
+        width: 100% !important;
+        padding-bottom: 15px !important;
+    }
+
+    .news-image img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: none !important;
+    }
+
+    .spacer-cell {
+        display: none !important;
+    }
+
+    .news-text-cell {
+        width: 100% !important;
+    }
+
+  /* 간격 확보 */
+  .spacer-cell {
+    width: 15px !important;
+  }
+
+  /* 텍스트 크기 조정 */
+  .header-title {
+    font-size: 24px !important;
+  }
+
+  .news-title {
+    font-size: 15px !important;
+  }
+
+  .news-description {
+    font-size: 13px !important;
+  }
+
+  /* 여백 조정 */
+  .container-padding {
+    padding: 20px 15px !important;
+  }
+
+  /* 헤더 내 여백 조정 */
+  .header-cell {
+    padding: 30px 15px !important;
+  }
+
+  /* 푸터 컬럼 조정 */
+  .footer-column {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .footer-info {
+    padding-right: 0 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .btn-cell {
+    padding-top: 10px !important;
+  }
+
+  /* 섹션 간격 */
+  .section-gap {
+    height: 20px !important;
+  }
+}
+
+/* 더 작은 모바일 화면 */
+@media only screen and (max-width: 480px) {
+  /* 이미지-텍스트를 세로로 전환 */
+  .news-grid-row td {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .news-image {
+    width: 100% !important;
+    padding-bottom: 15px !important;
+  }
+
+  .news-image img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: none !important;
+  }
+
+  .spacer-cell {
+    display: none !important;
+  }
+
+  .news-text-cell {
+    width: 100% !important;
+  }
+
+  /* 메타 정보 조정 */
+  .news-meta-row td {
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
+  }
+
+  .news-meta-row td:last-child {
+    text-align: left !important;
+    padding-top: 8px !important;
+  }
+
+  /* 기타 미세 조정 */
+  .header-title {
+    font-size: 20px !important;
+  }
+
+  .section-title {
+    font-size: 16px !important;
+  }
+
+  /* 알림 텍스트 - 모바일 */
+  .notice-text {
+    font-size: 9px !important;
+  }
+
+  .original-btn {
+    padding: 2px 6px !important;
+    font-size: 9px !important;
+  }
+}
+</style>
+</head>
+<body>
+<!-- preheader 텍스트 -->
+<div style="font-size: 0px; color: transparent; display: none; height: 0; width: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all;">🔥Breaking: Randy Pitchford, Borderlands 4의 예상 가격 $80에 대한 반발을 겪다 - Gearbox의 대표 Randy Pitchford는 Borderlands 4의 예상 가격이 $80이라는 팬의 우려에 대해 "진정한 팬이라면 방법을 찾아낼 것"이라고 답변했습니다.
+</div>
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#111827">
+<tr>
+<td align="center" style="padding: 0 20px;">
+<!-- 메인 컨테이너 - 반응형 너비 적용 -->
+<table width="800" class="main-container" cellpadding="0" cellspacing="0" border="0" style="margin: 20px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+<!-- 경고 텍스트와 원본 보기 버튼 - 우측 정렬 -->
+<tr>
+  <td style="padding: 10px 20px 5px; background-color: #111827; text-align: right;">
+    <span style="font-size: 10px; color: #6b7280; font-style: italic;">
+      ⚠️ 모바일 및 새 Outlook 보기에 최적화 되어 있습니다.
+    </span>
+    <a href="https://iam-pine.github.io/NA-daily-news/NA_dailynews_250521.html" target="_blank" style="display: inline-block; padding: 3px 8px; margin-left: 10px; background-color: #1f2937 !important; border: 1px solid #3b82f6; border-radius: 4px; color: #60a5fa; font-size: 10px; font-weight: bold; text-decoration: none; font-style: normal; vertical-align: middle;">
+      원본 보기
+    </a>
+  </td>
+</tr>
+
+
+        <!-- 헤더 -->
+        <tr>
+          <td align="center" class="header-cell" style="padding: 48px 20px; background-color: #3b82f6; background: linear-gradient(135deg, #3b82f6, #6366f1); color: #ffffff; border-radius: 12px 12px 0 0;">
+            <h1 class="header-title" style="margin: 0; font-size: 28px; letter-spacing: -0.5px;">🎮 [북미] Daily Global Game News</h1>
+            <div style="display: inline-block; margin-top: 15px; padding: 6px 16px; background-color: rgba(0,0,0,0.2); border-radius: 20px;">
+              <p style="margin: 0; font-size: 14px; color: #ffffff;">2025년 05월 21일　|　ER사업실 오토브리핑</p>
+            </div>
+          </td>
+        </tr>
+
+        <!-- 여기에 HOT 트렌드 템플릿 삽입 -->
+<!-- HOT 트렌드 섹션 -->
+<tr>
+  <td class="container-padding main-content" style="padding: 30px 20px; background-color: #111827;">
+    <h2 class="section-title">🔥 HOT 트렌드</h2>
+
+    <!-- HOT 뉴스 1 -->
+    <div class="card" style="margin-bottom: 16px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="padding: 20px;">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr class="news-grid-row">
+                <td class="news-image" width="180" valign="top" style="vertical-align: top;">
+                  <img src="https://assets-prd.ignimgs.com/2025/05/20/randy-1747747768032.jpg?width=1280" width="180" height="100" style="display: block; border-radius: 4px; object-fit: cover;" alt="Randy Pitchford">
+                </td>
+                <td class="spacer-cell" width="20"></td>
+                <td class="news-text-cell" valign="top" style="vertical-align: top;">
+                  <h3 class="news-title" style="margin: 0 0 6px; font-size: 16px; color: #60a5fa;">Randy Pitchford, Borderlands 4의 예상 가격 $80에 대한 반발을 겪다</h3>
+                  <p class="news-description" style="margin: 0 0 10px; font-size: 14px; line-height: 1.5; color: #d1d5db;">Gearbox의 대표 Randy Pitchford는 Borderlands 4의 예상 가격이 $80이라는 팬의 우려에 대해 "진정한 팬이라면 방법을 찾아낼 것"이라고 답변했습니다. 업계는 이미 가격 상승을 경험하고 있으며, Borderlands 시리즈가 이러한 흐름을 따를 수 있다는 걱정이 많습니다. Pitchford의 발언은 그의 권한 밖의 결정이라며, 팬들을 자극했습니다.</p>
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr class="news-meta-row">
+                      <td>
+                        <p style="font-size: 12px; color: #9ca3af; margin: 0;">
+                          <span class="source-tag">IGN</span> 2025-05-20 | 💬 429
+                        </p>
+                      </td>
+                      <td align="right" width="110" class="btn-cell">
+                        <a href="https://www.ign.com/articles/as-gamers-express-concern-about-borderlands-4-potentially-costing-80-gearbox-chief-randy-pitchford-says-if-youre-a-real-fan-youll-find-a-way-to-make-it-happen" class="btn-primary">자세히 보기 →</a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- HOT 뉴스 2 -->
+    <div class="card" style="margin-bottom: 16px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="padding: 20px;">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr class="news-grid-row">
+                <td class="news-image" width="180" valign="top" style="vertical-align: top;">
+                  <img src="https://assets-prd.ignimgs.com/2024/12/13/tw4-inside-blog-1734092931161.jpg?width=1280" width="180" height="100" style="display: block; border-radius: 4px; object-fit: cover;" alt="The Witcher 4">
+                </td>
+                <td class="spacer-cell" width="20"></td>
+                <td class="news-text-cell" valign="top" style="vertical-align: top;">
+                  <h3 class="news-title" style="margin: 0 0 6px; font-size: 16px; color: #60a5fa;">Geralt 배우, The Witcher 4의 Ciri 주인공 논란에 반박</h3>
+                  <p class="news-description" style="margin: 0 0 10px; font-size: 14px; line-height: 1.5; color: #d1d5db;">The Witcher의 Geralt를 연기한 Doug Cockle은 새로운 게임의 주인공이 Ciri인 것에 대한 비판에 대해 "바보 같은 소리"라며 책을 읽어보라고 응수했습니다. Cockle은 Ciri가 멋진 캐릭터이며, 게임이 그녀를 중심으로 초점을 맞추는 것이 좋은 결정이라고 강조했습니다.</p>
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr class="news-meta-row">
+                      <td>
+                        <p style="font-size: 12px; color: #9ca3af; margin: 0;">
+                          <span class="source-tag">IGN</span> 2025-05-20 | 💬 238
+                        </p>
+                      </td>
+                      <td align="right" width="110" class="btn-cell">
+                        <a href="https://www.ign.com/articles/thats-just-stupid-geralt-actor-slams-suggestion-the-witcher-4-starring-ciri-is-woke" class="btn-primary">자세히 보기 →</a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- HOT 뉴스 3 -->
+    <div class="card" style="margin-bottom: 16px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="padding: 20px;">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr class="news-grid-row">
+                <td class="news-image" width="180" valign="top" style="vertical-align: top;">
+                  <img src="https://assets-prd.ignimgs.com/2025/05/20/druckmann-1747724939490.jpg?width=1280" width="180" height="100" style="display: block; border-radius: 4px; object-fit: cover;" alt="Neil Druckmann">
+                </td>
+                <td class="spacer-cell" width="20"></td>
+                <td class="news-text-cell" valign="top" style="vertical-align: top;">
+                  <h3 class="news-title" style="margin: 0 0 6px; font-size: 16px; color: #60a5fa;">Neil Druckmann, Intergalactic 외에 또 다른 게임 개발 중임을 확인</h3>
+                  <p class="news-description" style="margin: 0 0 10px; font-size: 14px; line-height: 1.5; color: #d1d5db;">Naughty Dog의 대표인 Neil Druckmann은 스튜디오가 Intergalactic: The Heretic Prophet 외에 또 다른 비밀 게임을 개발 중임을 밝혔습니다. Druckmann은 이 두 번째 게임에서는 제작자 역할을 맡고 있으며, 다른 팀을 멘토링하고 있다고 언급했습니다.</p>
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr class="news-meta-row">
+                      <td>
+                        <p style="font-size: 12px; color: #9ca3af; margin: 0;">
+                          <span class="source-tag">IGN</span> 2025-05-20 | 💬 97
+                        </p>
+                      </td>
+                      <td align="right" width="110" class="btn-cell">
+                        <a href="https://www.ign.com/articles/the-last-of-us-developer-naughty-dog-working-on-a-second-unannounced-game-other-than-intergalactic-the-heretic-prophet-neil-druckmann-confirms" class="btn-primary">자세히 보기 →</a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- HOT 뉴스 4 -->
+    <div class="card" style="margin-bottom: 16px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="padding: 20px;">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr class="news-grid-row">
+                <td class="news-image" width="180" valign="top" style="vertical-align: top;">
+                  <img src="https://assets-prd.ignimgs.com/2024/03/16/warzonemobileign1-1710576086840.jpg?width=1280" width="180" height="100" style="display: block; border-radius: 4px; object-fit: cover;" alt="Warzone Mobile">
+                </td>
+                <td class="spacer-cell" width="20"></td>
+                <td class="news-text-cell" valign="top" style="vertical-align: top;">
+                  <h3 class="news-title" style="margin: 0 0 6px; font-size: 16px; color: #60a5fa;">게임 폐쇄와 감소하는 관객 속에서 Call of Duty의 미래는?</h3>
+                  <p class="news-description" style="margin: 0 0 10px; font-size: 14px; line-height: 1.5; color: #d1d5db;">Activision은 Warzone Mobile을 iOS와 Android 앱 스토어에서 삭제하며 게임의 범위를 "간소화"하고 기대에 미치지 못했다고 인정했습니다. 이는 게임의 시작부터 어려움을 겪었던 Warzone Mobile의 가혹한 종료를 의미합니다. 이제 이 게임의 서버는 유지되지만, 새로운 콘텐츠나 업데이트는 제공되지 않으며, 실질적인 구매도 불가능합니다.</p>
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr class="news-meta-row">
+                      <td>
+                        <p style="font-size: 12px; color: #9ca3af; margin: 0;">
+                          <span class="source-tag">IGN</span> 2025-05-20 | 💬 79
+                        </p>
+                      </td>
+                      <td align="right" width="110" class="btn-cell">
+                        <a href="https://www.ign.com/articles/amid-game-closures-and-a-declining-audience-call-of-duty-is-in-a-rough-spot-so-whats-next" class="btn-primary">자세히 보기 →</a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- HOT 뉴스 5 -->
+    <div class="card" style="margin-bottom: 16px;">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td style="padding: 20px;">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+              <tr class="news-grid-row">
+                <td class="news-image" width="180" valign="top" style="vertical-align: top;">
+                  <img src="https://assets-prd.ignimgs.com/2025/04/01/atomfall-blog-1743506093205.jpg?width=1280" width="180" height="100" style="display: block; border-radius: 4px; object-fit: cover;" alt="Atomfall">
+                </td>
+                <td class="spacer-cell" width="20"></td>
+                <td class="news-text-cell" valign="top" style="vertical-align: top;">
+                  <h3 class="news-title" style="margin: 0 0 6px; font-size: 16px; color: #60a5fa;">Game Pass 통해 유입된 Atomfall 플레이어, Rebellion의 성공을 막지 못하다</h3>
+                  <p class="news-description" style="margin: 0 0 10px; font-size: 14px; line-height: 1.5; color: #d1d5db;">Rebellion은 Atomfall이 출시하자마자 수익을 내었다고 밝혔습니다. 많은 플레이어들이 Xbox Game Pass를 통해 게임을 접했음에도 불구하고, 게임은 즉각적으로 개발 비용을 회수했습니다. Rebellion은 현재 후속작이나 스핀오프 가능성을 논의 중이라고 밝혔습니다.</p>
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr class="news-meta-row">
+                      <td>
+                        <p style="font-size: 12px; color: #9ca3af; margin: 0;">
+                          <span class="source-tag">IGN</span> 2025-05-21 | 💬 68
+                        </p>
+                      </td>
+                      <td align="right" width="110" class="btn-cell">
+                        <a href="https://www.ign.com/articles/atomfall-immediately-profitable-at-launch-despite-countless-players-coming-from-game-pass-developer-discussing-sequel-plans" class="btn-primary">자세히 보기 →</a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </td>
+</tr>
+
+        <!-- 여기에 주요 헤드라인 템플릿 삽입 -->
+<!-- 주요 헤드라인 섹션 -->
+<tr>
+<td class="container-padding main-content" style="padding: 0 20px 30px;">
+<h2 class="section-title" style="letter-spacing: -0.5pt;">📢 주요 헤드라인</h2>
+
+<!-- 규제 & 이슈 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+  <!-- 수정된 카테고리 라벨 -->
+  <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 15px;">
+    <tr>
+      <td bgcolor="#ef4444" style="background-color: #ef4444 !important; padding: 6px 12px; border-radius: 20px;">
+        <span style="color: white; font-weight: bold; font-size: 13px; letter-spacing: -0.5pt;">규제 & 이슈</span>
+      </td>
+    </tr>
+  </table>
+
+  <ul style="list-style-type: none; padding: 0; margin: 0;">
+    <!-- 뉴스 아이템들 (구분선 포함) -->
+    <li class="news-item">
+      <a href="https://www.ign.com/articles/as-gamers-express-concern-about-borderlands-4-potentially-costing-80-gearbox-chief-randy-pitchford-says-if-youre-a-real-fan-youll-find-a-way-to-make-it-happen" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #ef4444 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">Randy Pitchford, Borderlands 4의 80달러 가격에 대한 팬들의 우려에 "진정한 팬이라면 방법을 찾을 것"이라고 발언해 논란</span>
+                <span class="headline-meta">IGN · 25-05-20</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+    <li class="news-item">
+      <a href="https://massivelyop.com/2025/05/20/fortnites-ai-darth-vader-was-a-toxicity-disaster-and-an-apparent-provocation-for-striking-voice-actors" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #ef4444 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">Fortnite의 AI 다스 베이더, 독성 문제와 성우 파업의 도화선</span>
+                <span class="headline-meta">IGN · 25-05-20</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+    <li class="news-item">
+      <a href="https://massivelyop.com/2025/05/20/project-ghosts-greg-street-unwittingly-ignites-debate-on-eastern-vs-western-mmo-design" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #ef4444 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">Project Ghost의 Greg Street, 동서양 MMO 디자인 논쟁을 무의식적으로 촉발</span>
+                <span class="headline-meta">MassivelyOP · 25-05-21</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+
+    <!-- 마지막 뉴스 아이템 (구분선 없음) -->
+    <li style="padding: 10px 0; position: relative;">
+      <a href="https://www.gamespot.com/articles/epic-asks-court-to-force-apple-to-return-fortnite-to-us-app-store/1100-6531659/" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #ef4444 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">Epic, Apple에게 Fortnite를 미국 앱 스토어에 복귀시키도록 법원에 요청</span>
+                <span class="headline-meta">GameSpot · 25-05-20</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- 게임 출시 & 발표 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+  <!-- 수정된 카테고리 라벨 -->
+  <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 15px;">
+    <tr>
+      <td bgcolor="#10B981" style="background-color: #10B981 !important; padding: 6px 12px; border-radius: 20px;">
+        <span style="color: white; font-weight: bold; font-size: 13px; letter-spacing: -0.5pt;">게임 출시 & 발표</span>
+      </td>
+    </tr>
+  </table>
+
+  <ul style="list-style-type: none; padding: 0; margin: 0;">
+    <!-- 뉴스 아이템들 (구분선 포함) -->
+    <li class="news-item">
+      <a href="https://www.ign.com/articles/heres-our-first-look-at-an-actual-nintendo-switch-2-cartridge" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #10B981 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">Nintendo, Switch 2 카트리지 첫 공개</span>
+                <span class="headline-meta">IGN · 25-05-20</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+    <li class="news-item">
+      <a href="https://www.ign.com/articles/the-last-of-us-developer-naughty-dog-working-on-a-second-unannounced-game-other-than-intergalactic-the-heretic-prophet-neil-druckmann-confirms" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #10B981 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">Neil Druckmann, Naughty Dog이 Intergalactic: The Heretic Prophet 외에 또 다른 게임을 개발 중이라고 확인</span>
+                <span class="headline-meta">IGN · 25-05-20</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+    <li class="news-item">
+      <a href="https://www.ign.com/articles/stellar-blade-developer-confirms-sequel-plans" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #10B981 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">Stellar Blade 2, Shift Up에 의해 후속작 계획 확인</span>
+                <span class="headline-meta">IGN · 25-05-20</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+
+    <!-- 마지막 뉴스 아이템 (구분선 없음) -->
+    <li style="padding: 10px 0; position: relative;">
+      <a href="https://www.gamespot.com/articles/stellar-blade-sequel-seemingly-confirmed-by-developer-shift-up/1100-6531674/" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #10B981 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">Stellar Blade 후속작, 개발사 Shift Up에 의해 암시</span>
+                <span class="headline-meta">GameSpot · 25-05-20</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- 매출 & 성과 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+  <!-- 수정된 카테고리 라벨 -->
+  <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 15px;">
+    <tr>
+      <td bgcolor="#10B981" style="background-color: #10B981 !important; padding: 6px 12px; border-radius: 20px;">
+        <span style="color: white; font-weight: bold; font-size: 13px; letter-spacing: -0.5pt;">매출 & 성과</span>
+      </td>
+    </tr>
+  </table>
+
+  <ul style="list-style-type: none; padding: 0; margin: 0;">
+    <!-- 뉴스 아이템들 (구분선 포함) -->
+    <li class="news-item">
+      <a href="https://www.ign.com/articles/atomfall-immediately-profitable-at-launch-despite-countless-players-coming-from-game-pass-developer-discussing-sequel-plans" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #10B981 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">Atomfall, Game Pass를 통해 많은 플레이어가 유입되었음에도 불구하고 출시 즉시 수익성 달성 - 후속작 계획 가능성</span>
+                <span class="headline-meta">IGN · 25-05-21</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+
+    <!-- 마지막 뉴스 아이템 (구분선 없음) -->
+    <li style="padding: 10px 0; position: relative;">
+      <a href="https://www.gamespot.com/articles/game-pass-release-atomfall-was-immediately-profitable-report/1100-6531671/" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #10B981 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">Game Pass 출시 Atomfall, '즉시 수익성' 달성 - 보고서</span>
+                <span class="headline-meta">GameSpot · 25-05-20</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- 업데이트 & 패치 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+  <!-- 수정된 카테고리 라벨 -->
+  <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 15px;">
+    <tr>
+      <td bgcolor="#2563EB" style="background-color: #2563EB !important; padding: 6px 12px; border-radius: 20px;">
+        <span style="color: white; font-weight: bold; font-size: 13px; letter-spacing: -0.5pt;">업데이트 & 패치</span>
+      </td>
+    </tr>
+  </table>
+
+  <ul style="list-style-type: none; padding: 0; margin: 0;">
+    <!-- 마지막 뉴스 아이템 (구분선 없음) -->
+    <li style="padding: 10px 0; position: relative;">
+      <a href="https://www.ign.com/articles/helldivers-2-heart-of-democracy-update-finally-brings-the-illuminate-invasion-to-the-streets-of-super-earth" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #2563EB !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">Helldivers 2 Heart of Democracy 업데이트, Illuminate 침공을 Super Earth의 거리로 가져오다</span>
+                <span class="headline-meta">IGN · 25-05-20</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- IP & 콜라보 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+  <!-- 수정된 카테고리 라벨 -->
+  <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 15px;">
+    <tr>
+      <td bgcolor="#2563EB" style="background-color: #2563EB !important; padding: 6px 12px; border-radius: 20px;">
+        <span style="color: white; font-weight: bold; font-size: 13px; letter-spacing: -0.5pt;">IP & 콜라보</span>
+      </td>
+    </tr>
+  </table>
+
+  <ul style="list-style-type: none; padding: 0; margin: 0;">
+    <!-- 뉴스 아이템들 (구분선 포함) -->
+    <li class="news-item">
+      <a href="https://www.ign.com/articles/will-the-last-of-us-get-a-season-4-showrunner-craig-mazin-says-theres-no-way-to-complete-this-narrative-in-season-3" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #2563EB !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">The Last of Us TV 쇼러너 Craig Mazin, 시즌 4에서 이야기를 마무리하는 것이 '가장 가능성 있는 결과'라고 언급</span>
+                <span class="headline-meta">IGN · 25-05-20</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+
+    <!-- 마지막 뉴스 아이템 (구분선 없음) -->
+    <li style="padding: 10px 0; position: relative;">
+      <a href="https://www.gamespot.com/articles/netflix-is-turning-this-popular-video-game-into-a-tv-series/1100-6531665/" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #2563EB !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">Netflix, 인기 비디오 게임을 TV 시리즈로 제작 중</span>
+                <span class="headline-meta">GameSpot · 25-05-20</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- 커뮤니티 & 이벤트 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+  <!-- 수정된 카테고리 라벨 -->
+  <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 15px;">
+    <tr>
+      <td bgcolor="#2563EB" style="background-color: #2563EB !important; padding: 6px 12px; border-radius: 20px;">
+        <span style="color: white; font-weight: bold; font-size: 13px; letter-spacing: -0.5pt;">커뮤니티 & 이벤트</span>
+      </td>
+    </tr>
+  </table>
+
+  <ul style="list-style-type: none; padding: 0; margin: 0;">
+    <!-- 마지막 뉴스 아이템 (구분선 없음) -->
+    <li style="padding: 10px 0; position: relative;">
+      <a href="https://massivelyop.com/2025/05/20/elder-scrolls-onlines-new-live-action-trailer-has-a-message-for-gamers-you-belong-in-eso/" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #2563EB !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">Elder Scrolls Online의 새로운 실사 트레일러, 게이머들에게 'ESO에 속해 있다'는 메시지 전달</span>
+                <span class="headline-meta">MassivelyOP · 25-05-21</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- 기타 카테고리 -->
+<div class="card" style="padding: 20px; margin-bottom: 20px; border-radius: 8px; background-color: #1f2937 !important; border: 1px solid #374151;">
+  <!-- 수정된 카테고리 라벨 -->
+  <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 15px;">
+    <tr>
+      <td bgcolor="#626262" style="background-color: #626262 !important; padding: 6px 12px; border-radius: 20px;">
+        <span style="color: white; font-weight: bold; font-size: 13px; letter-spacing: -0.5pt;">기타</span>
+      </td>
+    </tr>
+  </table>
+
+  <ul style="list-style-type: none; padding: 0; margin: 0;">
+    <!-- 뉴스 아이템들 (구분선 포함) -->
+    <li class="news-item">
+      <a href="https://www.ign.com/articles/thats-just-stupid-geralt-actor-slams-suggestion-the-witcher-4-starring-ciri-is-woke" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #626262 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">The Witcher 4의 주인공이 Ciri라는 이유로 '각성'이라는 비판에 대해 Geralt 배우가 반박</span>
+                <span class="headline-meta">IGN · 25-05-20</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+    <li class="news-item">
+      <a href="https://www.ign.com/articles/amid-game-closures-and-a-declining-audience-call-of-duty-is-in-a-rough-spot-so-whats-next" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #626262 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">게임 종료와 감소하는 관객 속에서 Call of Duty의 어려운 상황, 다음 단계는?</span>
+                <span class="headline-meta">IGN · 25-05-20</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+    <li class="news-item">
+      <a href="https://www.ign.com/articles/cyberpunk-2077-sequel-project-orion-has-night-city-and-another-city-that-feels-like-chicago-gone-wrong-mike-pondsmith-teases" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #626262 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">Cyberpunk 2077 후속작 Project Orion, 새로운 도시 세부 사항을 Mike Pondsmith가 암시</span>
+                <span class="headline-meta">IGN · 25-05-21</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+    <li class="news-item">
+      <a href="https://www.ign.com/videos/gta-6-delay-will-cost-games-industry-27b-but-take-two-swears-its-on-schedule-ign-daily-fix" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #626262 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">GTA 6 지연이 게임 산업에 27억 달러의 손실을 초래할 것, 하지만 Take-Two는 일정대로 진행 중이라고 주장 - IGN Daily Fix</span>
+                <span class="headline-meta">IGN · 25-05-20</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+    <li class="news-item">
+      <a href="https://www.gamespot.com/articles/the-last-of-us-director-neil-druckmann-is-working-on-a-second-unannounced-game-at-naughty-dog/1100-6531656/" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #626262 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">The Last Of Us 감독 Neil Druckmann, Naughty Dog에서 두 번째 미공개 게임 작업 중</span>
+                <span class="headline-meta">GameSpot · 25-05-20</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+    <li class="news-item">
+      <a href="https://www.gamespot.com/articles/the-witcher-4-director-wants-players-to-feel-the-rewards-for-their-choices/1100-6531667/" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #626262 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">The Witcher 4 감독, 플레이어가 선택의 보상을 느낄 수 있기를 원한다</span>
+                <span class="headline-meta">GameSpot · 25-05-20</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+    <li class="news-item">
+      <a href="https://www.gamespot.com/articles/leaked-battlefield-6-footage-gives-off-bad-company-2-vibes-dev-says/1100-6531668/" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #626262 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">Leaked Battlefield 6 영상, Bad Company 2 느낌을 준다고 개발자가 언급</span>
+                <span class="headline-meta">GameSpot · 25-05-20</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+    <li class="news-item">
+      <a href="https://www.gamespot.com/articles/death-stranding-2s-scoring-well-with-test-reviewers-but-kojima-isnt-satisfied/1100-6531555/" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #626262 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">Death Stranding 2, 테스트 리뷰어들에게 좋은 평가를 받았지만 Kojima는 만족하지 않아</span>
+                <span class="headline-meta">GameSpot · 25-05-20</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+    <li class="news-item">
+      <a href="https://www.gamespot.com/articles/bethesda-switching-to-unreal-engine-would-threaten-mod-scene-former-dev-says/1100-6531672/" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #626262 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">Bethesda, Unreal Engine으로 전환하면 모드 씬에 위협이 될 것이라고 전 개발자가 언급</span>
+                <span class="headline-meta">GameSpot · 25-05-20</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+    <li class="news-item">
+      <a href="https://www.gamespot.com/articles/helldivers-2-players-need-to-kill-2-5-billion-aliens-to-defend-super-earth-and-thats-just-the-start/1100-6531687/" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #626262 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">Helldivers 2 플레이어, Super Earth를 방어하기 위해 25억 마리의 외계인을 처치해야 하며, 이는 시작에 불과</span>
+                <span class="headline-meta">GameSpot · 25-05-21</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+    <li class="news-item">
+      <a href="https://www.gamespot.com/articles/witcher-4-is-not-woke-for-starring-ciri-geralt-voice-actor-says/1100-6531680/" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #626262 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">Witcher 4는 Ciri가 주인공이라는 이유로 '각성'이 아니다, Geralt 성우가 언급</span>
+                <span class="headline-meta">GameSpot · 25-05-21</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+    <li class="news-item">
+      <a href="https://www.gamespot.com/articles/interactive-gta-6-map-made-by-fans-highlights-more-than-100-points-of-interest/1100-6531683/" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #626262 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">Interactive GTA 6 지도, 팬들이 만든 100개 이상의 관심 지점 강조</span>
+                <span class="headline-meta">GameSpot · 25-05-21</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+    <li class="news-item">
+      <a href="https://www.gamespot.com/articles/returnal-dev-not-looking-to-make-live-service-or-free-to-play-games/1100-6531676/" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #626262 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">Returnal 개발사, 라이브 서비스나 무료 플레이 게임 제작 계획 없어</span>
+                <span class="headline-meta">GameSpot · 25-05-21</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+    <li class="news-item">
+      <a href="https://www.gamespot.com/articles/a-sniper-elite-battle-royale-was-canceled-and-now-we-know-why/1100-6531673/" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #626262 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">Sniper Elite 배틀 로얄이 취소된 이유가 이제 밝혀지다</span>
+                <span class="headline-meta">GameSpot · 25-05-20</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+
+    <!-- 마지막 뉴스 아이템 (구분선 없음) -->
+    <li style="padding: 10px 0; position: relative;">
+      <a href="https://www.ign.com/articles/meet-the-man-who-designed-pokemons-iconic-logo" style="text-decoration: none; display: block;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width: 100%;">
+          <tr>
+            <td width="20" valign="middle" style="vertical-align: middle;">
+              <span style="color: #626262 !important; text-decoration: none; font-size: 16px; letter-spacing: -0.5pt; vertical-align: middle;">⊕</span>
+            </td>
+            <td valign="middle" style="vertical-align: middle;">
+              <div class="headline-content">
+                <span class="headline-text">Pokémon의 상징적인 로고를 디자인한 남자를 만나보세요</span>
+                <span class="headline-meta">IGN · 25-05-20</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- 섹션 간격 추가 -->
+<div class="section-gap"></div>
+</td>
+</tr>
+
+        <!-- 여기에 최다 언급 키워드 템플릿 삽입 -->
+<tr>
+<td style="padding: 0 20px 30px;">
+<h2 class="section-title">📌 최다 언급 키워드</h2>
+<div class="card" style="padding: 20px; background-color: #1e293b !important; border-radius: 10px; margin-bottom: 16px; border: 1px solid #374151; overflow: hidden;">
+<!-- IGN Keywords -->
+<div style="margin-bottom: 15px;">
+<div style="font-size: 13px; font-weight: bold; color: #e2e8f0; margin-bottom: 10px;">📰 IGN 키워드</div>
+<div>
+ <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+    <tr>
+      <td bgcolor="#3b82f6" style="background-color: #3b82f6 !important; padding: 6px 12px; border-radius: 16px;">
+        <span style="color: white; font-size: 12px; font-weight: bold;">Randy Pitchford</span>
+      </td>
+    </tr>
+  </table>
+
+  <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+    <tr>
+      <td bgcolor="#3b82f6" style="background-color: #3b82f6 !important; padding: 6px 12px; border-radius: 16px;">
+        <span style="color: white; font-size: 12px; font-weight: bold;">Ciri</span>
+      </td>
+    </tr>
+  </table>
+
+  <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+    <tr>
+      <td bgcolor="#3b82f6" style="background-color: #3b82f6 !important; padding: 6px 12px; border-radius: 16px;">
+        <span style="color: white; font-size: 12px; font-weight: bold;">Neil Druckmann</span>
+      </td>
+    </tr>
+  </table>
+
+  <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+    <tr>
+      <td bgcolor="#3b82f6" style="background-color: #3b82f6 !important; padding: 6px 12px; border-radius: 16px;">
+        <span style="color: white; font-size: 12px; font-weight: bold;">Call of Duty</span>
+      </td>
+    </tr>
+  </table>
+
+  <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+    <tr>
+      <td bgcolor="#3b82f6" style="background-color: #3b82f6 !important; padding: 6px 12px; border-radius: 16px;">
+        <span style="color: white; font-size: 12px; font-weight: bold;">Atomfall</span>
+      </td>
+    </tr>
+  </table>
+
+  <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+    <tr>
+      <td bgcolor="#3b82f6" style="background-color: #3b82f6 !important; padding: 6px 12px; border-radius: 16px;">
+        <span style="color: white; font-size: 12px; font-weight: bold;">Stellar Blade</span>
+      </td>
+    </tr>
+  </table>
+
+  <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+    <tr>
+      <td bgcolor="#3b82f6" style="background-color: #3b82f6 !important; padding: 6px 12px; border-radius: 16px;">
+        <span style="color: white; font-size: 12px; font-weight: bold;">Cyberpunk 2077</span>
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+
+<!-- GameSpot Keywords -->
+<div style="margin-bottom: 15px;">
+<div style="font-size: 13px; font-weight: bold; color: #e2e8f0; margin-bottom: 10px;">📰 GameSpot 키워드</div>
+<div>
+  <!-- 수정된 키워드 태그 -->
+  <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+    <tr>
+      <td bgcolor="#10b981" style="background-color: #10b981 !important; padding: 6px 12px; border-radius: 16px;">
+        <span style="color: white; font-size: 12px; font-weight: bold;">Neil Druckmann</span>
+      </td>
+    </tr>
+  </table>
+
+  <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+    <tr>
+      <td bgcolor="#10b981" style="background-color: #10b981 !important; padding: 6px 12px; border-radius: 16px;">
+        <span style="color: white; font-size: 12px; font-weight: bold;">Ciri</span>
+      </td>
+    </tr>
+  </table>
+
+  <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+    <tr>
+      <td bgcolor="#10b981" style="background-color: #10b981 !important; padding: 6px 12px; border-radius: 16px;">
+        <span style="color: white; font-size: 12px; font-weight: bold;">Battlefield 6</span>
+      </td>
+    </tr>
+  </table>
+
+  <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+    <tr>
+      <td bgcolor="#10b981" style="background-color: #10b981 !important; padding: 6px 12px; border-radius: 16px;">
+        <span style="color: white; font-size: 12px; font-weight: bold;">Death Stranding 2</span>
+      </td>
+    </tr>
+  </table>
+
+  <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+    <tr>
+      <td bgcolor="#10b981" style="background-color: #10b981 !important; padding: 6px 12px; border-radius: 16px;">
+        <span style="color: white; font-size: 12px; font-weight: bold;">Bethesda</span>
+      </td>
+    </tr>
+  </table>
+
+  <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+    <tr>
+      <td bgcolor="#10b981" style="background-color: #10b981 !important; padding: 6px 12px; border-radius: 16px;">
+        <span style="color: white; font-size: 12px; font-weight: bold;">Helldivers 2</span>
+      </td>
+    </tr>
+  </table>
+
+  <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+    <tr>
+      <td bgcolor="#10b981" style="background-color: #10b981 !important; padding: 6px 12px; border-radius: 16px;">
+        <span style="color: white; font-size: 12px; font-weight: bold;">Epic vs Apple</span>
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+
+<!-- MassivelyOP Keywords -->
+<div>
+<div style="font-size: 13px; font-weight: bold; color: #e2e8f0; margin-bottom: 10px;">📰 MassivelyOP 키워드</div>
+<div>
+  <!-- 수정된 키워드 태그 -->
+  <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+    <tr>
+      <td bgcolor="#695FEB" style="background-color: #695FEB !important; padding: 6px 12px; border-radius: 16px;">
+        <span style="color: white; font-size: 12px; font-weight: bold;">AI 다스 베이더</span>
+      </td>
+    </tr>
+  </table>
+
+  <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+    <tr>
+      <td bgcolor="#695FEB" style="background-color: #695FEB !important; padding: 6px 12px; border-radius: 16px;">
+        <span style="color: white; font-size: 12px; font-weight: bold;">Greg Street</span>
+      </td>
+    </tr>
+  </table>
+
+  <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+    <tr>
+      <td bgcolor="#695FEB" style="background-color: #695FEB !important; padding: 6px 12px; border-radius: 16px;">
+        <span style="color: white; font-size: 12px; font-weight: bold;">Elder Scrolls Online</span>
+      </td>
+    </tr>
+  </table>
+
+  <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+    <tr>
+      <td bgcolor="#695FEB" style="background-color: #695FEB !important; padding: 6px 12px; border-radius: 16px;">
+        <span style="color: white; font-size: 12px; font-weight: bold;">Fortnite 성우 파업</span>
+      </td>
+    </tr>
+  </table>
+
+  <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block; margin: 0 4px 8px 0;">
+    <tr>
+      <td bgcolor="#695FEB" style="background-color: #695FEB !important; padding: 6px 12px; border-radius: 16px;">
+        <span style="color: white; font-size: 12px; font-weight: bold;">동서양 MMO 디자인</span>
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+</div>
+</td>
+</tr>
+
+        <!-- 구분선 -->
+        <tr>
+          <td align="center" style="padding: 0 20px;">
+            <div style="max-width: 80px; height: 1px; background-color: #374151; margin: 0 auto 20px;"></div>
+          </td>
+        </tr>
+
+        <!-- 푸터 시작 -->
+        <tr>
+          <td align="center" style="padding: 0 20px;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 20px 0; border-spacing: 0;">
+              <tr>
+                <td align="center" style="padding: 40px 30px; background-color: #111827; border-radius: 0 0 12px 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      <!-- 왼쪽 컬럼: 정보 -->
+                      <td style="vertical-align: top; padding-right: 40px; width: 60%;" class="footer-column footer-info">
+                        <p style="margin: 0 0 12px; font-size: 18px; color: #f9fafb; font-weight: 600; letter-spacing: -0.5px;">
+                          NEXON Daily News
+                        </p>
+                        <p style="margin: 0 0 20px; font-size: 13px; line-height: 1.7; color: #9ca3af; letter-spacing: -0.5px;">
+                          ER사업실에서 Azure OpenAI를 활용하여 자동 생성하는 일간 뉴스레터로,
+                          매일 오전 8시에 최신 북미 웹진 기사를 수집하여 분석합니다.
+                        </p>
+                        <p style="margin: 0; font-size: 13px; color: #6b7280; letter-spacing: -0.5px;">
+                          © [연도] NEXON KOREA
+                        </p>
+                      </td>
+
+                      <!-- 오른쪽 컬럼: 링크들 -->
+                      <td style="vertical-align: top; width: 40%;" class="footer-column">
+                        <p style="margin: 0 0 14px; font-size: 16px; color: #f9fafb; font-weight: 600; letter-spacing: -0.5px;">
+                          Quick Links
+                        </p>
+
+                        <a href="https://iam-pine.github.io/NA-daily-news/" style="display: block; margin-bottom: 12px; padding: 12px 16px; background-color: #1e293b; border-left: 4px solid #3b82f6; color: #f9fafb; text-decoration: none; font-size: 14px; border-radius: 0 4px 4px 0; transition: background-color 0.2s; letter-spacing: -0.5px;">
+                          📚 지난 뉴스레터 아카이브
+                        </a>
+
+                        <a href="mailto:ER-OverseasBiz@nexon.co.kr" style="display: block; padding: 12px 16px; background-color: #1e293b; border-left: 4px solid #3b82f6; color: #f9fafb; text-decoration: none; font-size: 14px; border-radius: 0 4px 4px 0; transition: background-color 0.2s; letter-spacing: -0.5px;">
+                          ✉️ 문의 또는 피드백
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- 푸터 끝 -->
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
